@@ -6,6 +6,7 @@ import { COMMENTS_DUMMY_DATA } from "../utils/comments"
 
 import PlayVideo from "./PlayVideo"
 import Comment from "./Comment"
+import LiveChat from "./LiveChat"
 
 const WatchPage = () => {
     const [searchParams] = useSearchParams()
@@ -14,8 +15,8 @@ const WatchPage = () => {
         dispatchAction(closeMenu())
     }, [])  
     return(
-        <div className="m-2 grid grid-flow-col col-span-12">
-            <div className="col-span-8">
+        <div className="grid grid-cols-12 col-span-12">
+            <div className="col-span-9">
                 <PlayVideo linkId={searchParams.get("v")}/>
                 <div className="p-5">
                     
@@ -26,8 +27,8 @@ const WatchPage = () => {
                     }
                 </div>
             </div>
-            <div className="col-span-2">
-                Recommendations
+            <div className="col-span-3">
+                <LiveChat />
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ const Body = () => {
     const value = useSelector((store) => store.compactSlice.toggle)
 
     return(
-        <div className="grid grid-cols-[minmax(100px,150px)_auto]">
+        <div className="grid grid-cols-12 mr-2">
             {value && <Sidebar />}
             <Outlet />
         </div>

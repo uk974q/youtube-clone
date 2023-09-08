@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import compactSliceReducer from "./compactSlice";
-import autosuggestSlice from "./autosuggestSlice";
+import autosuggestReducer from "./autosuggestSlice";
+import chatReducer from "./ChatSlice";
 
 const appStore = configureStore({
     reducer: {
         compactSlice : compactSliceReducer,
-        autoSuggest : autosuggestSlice
+        autoSuggest : autosuggestReducer,
+        chats: chatReducer
     }
 })
 export default appStore
