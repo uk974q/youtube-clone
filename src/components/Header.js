@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { YOUTUBE_AUTOSUGGEST } from "../utils/constants"
 import Autosuggest from "./Autosuggest"
 import { addTerm } from "../utils/autosuggestSlice"
+import { Link } from "react-router-dom"
 
 const Header = () => {
 
@@ -33,7 +34,9 @@ const Header = () => {
         <div className="grid grid-flow-col col-span-12 h-16 mb-2 items-center p-2 shadow-lg">
             <div className="h-12 flex items-center col-span-2">
                 <i onClick={() => dispatchAction(toggleSlice())} className="las la-bars text-lg cursor-pointer"></i>
-                <img alt="youtubelogo" className="ml-5 " height="10px" width="70px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/YouTube_Logo_%282013-2017%29.svg/1280px-YouTube_Logo_%282013-2017%29.svg.png" />
+                <Link to={"/"}>
+                    <img alt="youtubelogo" className="ml-5 " height="10px" width="70px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/YouTube_Logo_%282013-2017%29.svg/1280px-YouTube_Logo_%282013-2017%29.svg.png" />
+                </Link>
             </div>
             <div className="h-12 flex items-center w-full col-span-8 justify-center">
                 <div className="relative w-1/2 h-2/3 py-0">

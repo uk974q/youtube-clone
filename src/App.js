@@ -1,16 +1,30 @@
-import { Provider } from 'react-redux';
+import { Provider, useSelector } from 'react-redux';
 import './App.css';
-import Body from './components/Body';
 import Header from './components/Header';
 import appStore from './utils/appStore';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Outlet, RouterProvider, createBrowserRouter, useLocation } from 'react-router-dom';
 import WatchPage from './components/WatchPage';
 import Main from './components/Main';
+import Sidebar from './components/Sidebar';
+
+const YouTubeClone = () => {
+  // const value = useSelector((store) => store.compactSlice.toggle)
+  const location = useLocation()
+  return (
+    <>
+      <Header />
+      <div className="grid grid-cols-12 mr-2">
+          {location.pathname == "/"  && <Sidebar />}
+          <Outlet />
+      </div>
+    </>
+  )
+}
 
 const appRoutes = createBrowserRouter([
     {
       path: "/",
-      element: <Body />,
+      element: <YouTubeClone />,
       children: [
         {
           path: "/",
@@ -24,12 +38,15 @@ const appRoutes = createBrowserRouter([
     }
 ])
 
+
+
 function App() {
   return (
     <div>
       <Provider store={appStore}>
-        <Header />
-        <RouterProvider router={appRoutes}><Body /></RouterProvider>
+        <RouterProvider router={appRoutes}>
+          <YouTubeClone />
+        </RouterProvider>
       </Provider>
     </div>
   );

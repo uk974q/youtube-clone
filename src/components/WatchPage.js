@@ -16,9 +16,12 @@ const WatchPage = () => {
     }, [])  
     return(
         <div className="grid grid-cols-12 col-span-12">
-            <div className="col-span-9">
+            {/* <div className="col-span-12 lg:col-span-9"> */}
                 <PlayVideo linkId={searchParams.get("v")}/>
-                <div className="p-5">
+                <div className="col-span-12 lg:col-span-3 pl-3">
+                    <LiveChat />
+                </div>
+                <div className="col-span-12 p-5">
                     
                     {COMMENTS_DUMMY_DATA.length ? 
                         COMMENTS_DUMMY_DATA?.map((el,i) => (
@@ -26,10 +29,8 @@ const WatchPage = () => {
                         )) : null
                     }
                 </div>
-            </div>
-            <div className="col-span-3">
-                <LiveChat />
-            </div>
+            {/* </div> */}
+            
         </div>
     )
 }
