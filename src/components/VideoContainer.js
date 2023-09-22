@@ -16,7 +16,7 @@ const VideoContainer = () => {
     const fetchVideos = async () => {
         let data = await fetch(YOUTUBE_API)
         let jsonData = await data.json()
-        console.log('Data',jsonData)
+        // console.log('Data',jsonData)
         let videoData = jsonData.items.map(el => {
             dispatchAction(setTags(el.snippet.tags))
             return (
