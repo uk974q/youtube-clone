@@ -4,7 +4,7 @@ const Thumbnail = ({imgLink, urlId, title, channel, count, likes}) => {
 
     return(
         <Link to={"/video?v="+urlId}>
-            <div className="flex flex-col cursor-pointer hover:bg-slate-100 p-2">
+            <div className="flex flex-col cursor-pointer hover:bg-slate-100 p-2 shadow-xl rounded-lg">
                 <img alt={title} className="rounded-lg"src={imgLink} width="100%" height="50%" />
                 <div className="grid grid-flow-col col-span-12 p-2">
                     <i className="las la-user-circle text-4xl cursor-pointer row-span-3 col-span-2 text-center text-red-600"></i>

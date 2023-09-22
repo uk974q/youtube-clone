@@ -5,7 +5,7 @@ const ButtonList = () => {
     const buttonList = useSelector((store) => store.videoData.tags)
     // const buttonList = ["All", "Tags", "Movie", "Sitar", "Folk Music", "Cricket", "Football", "Games", "Cooking"]
     return(
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap justify-center gap-2">
             {buttonList.map(el => <Button key={el} title={el} />)}
         </div>
     )
