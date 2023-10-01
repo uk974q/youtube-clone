@@ -28,7 +28,7 @@ const VideoContainer = () => {
 
 
     return(
-        <div className="grid lg:grid-cols-5 gap-4 mt-4">
+        <div className="grid lg:grid-cols-4 gap-4 mt-4">
             {videos.length ? videos : null}
         </div>
     )
